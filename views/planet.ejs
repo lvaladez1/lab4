@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head.ejs') %>
+
+    <body class="bg-black">
+        <div class="container py-4">
+            <h1 class="text-center mb-4">The Solar System</h1>
+            <%- include('partials/nav.ejs') %>
+
+            <h2 class="text-center my-4">Planet <%= planetName %></h2>
+
+            <div class="row align-items-center">
+
+                <div class="col-md-5 text-center">
+                    <img src="<%= planetInfo.image %>" 
+                        class="img-fluid rounded shadow" 
+                        alt="<%= planetName %>">
+                </div>
+
+                <div class="col-md-7">
+                    <div class="card shadow-sm bg-dark text-white">
+                        <div class="card-body">
+
+                            <h5 class="card-title mb-3">Planet Details</h5>
+
+                            <ul class="list-group list-group-flush">
+
+                                <li class="list-group-item bg-body-secondary rounded-top-3">
+                                    <strong>Distance from the Sun:</strong> 
+                                    <%= planetInfo.distanceFromSun %>
+                                </li>
+
+                                <li class="list-group-item bg-body-secondary">
+                                    <strong>Year Length:</strong> 
+                                    <%= planetInfo.yearLength %>
+                                </li>
+
+                                <li class="list-group-item bg-body-secondary">
+                                    <strong>Description:</strong> 
+                                    <%= planetInfo.description %>
+                                </li>
+
+                                <li class="list-group-item bg-body-secondary">
+                                    <strong>Radius:</strong> 
+                                    <%= planetInfo.radius %>
+                                </li>
+
+                                <li class="list-group-item bg-body-secondary">
+                                    <strong>Earth Day Duration:</strong> 
+                                    <%= planetInfo.oneEarthDay %>
+                                </li>
+
+                                <li class="list-group-item bg-body-secondary">
+                                    <strong>Moons:</strong> 
+                                    <%= planetInfo.moons %>
+                                </li>
+
+                                <li class="list-group-item bg-body-secondary rounded-bottom-3">
+                                    <strong>Source:</strong> 
+                                    <a href="<%= planetInfo.websiteLink %>" target="_blank">
+                                        NASA: <%= planetName %>
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <script src="/js/bootstrap.min.js"></script>
+    </body>
+    <%- include('partials/footer.ejs') %>
+
+</html>

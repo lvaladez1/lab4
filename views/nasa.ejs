@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head.ejs')%>
+
+<body class="bg-black text-white">
+    <div class="container py-4">
+        <h1 class="text-center mb-4">NASA's Picture of the Day</h1>
+        <%- include('partials/nav.ejs') %>
+
+        <h2 class="text-center my-4">Title: <%= podData.title %></h2>
+
+        <div class="row align-items-center">
+
+            <div class="col-md-5 text-center">
+                <img src="<%= podData.hdurl %>" 
+                     class="img-fluid rounded shadow" 
+                     alt="<%= podData.media_type %>">
+            </div>
+
+            <div class="col-md-7">
+                <div class="card shadow-sm bg-dark text-white">
+                    <div class="card-body">
+                        <h5 class="card-title mb-3">Picture Details</h5>
+
+                        <ul class="list-group list-group-flush">
+
+                            <li class="list-group-item bg-body-secondary rounded-top-3">
+                                <strong>Date:</strong>
+                                <%= podData.date %>
+                            </li>
+
+                            <li class="list-group-item bg-body-secondary">
+                                <strong>Title:</strong>
+                                <%= podData.title %>
+                            </li>
+
+                            <li class="list-group-item bg-body-secondary">
+                                <strong>Media Type:</strong>
+                                <%= podData.media_type %>
+                            </li>
+
+                            <li class="list-group-item bg-body-secondary">
+                                <strong>Explanation:</strong>
+                                <%= podData.explanation %>
+                            </li>
+
+                            <li class="list-group-item bg-body-secondary rounded-bottom-3">
+                                <strong>Source:</strong>
+                                <a href="<%= podData.url %>" target="_blank">
+                                    NASA
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="/js/bootstrap.min.js"></script>
+</body>
+
+    <%- include('partials/footer.ejs')%>
+
+</html>
