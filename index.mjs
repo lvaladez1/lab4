@@ -24,7 +24,7 @@ app.get('/planet', (req, res) => {
 
 app.get('/nasa', async(req, res) => {
     let apiKey = "qdPyIOKtgEpxoLtCKdAe0mVXa9xG4UUeVpG8xGQl";
-    let todayDate = new Date().toLocaleDateString('en-CA');
+    let todayDate = new Date().toISOString().slice(0, 10);
     let url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${todayDate}`;
     
     let response = await fetch(url);
